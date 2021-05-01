@@ -18,10 +18,27 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+
         public ActionResult GetCategoryList()
         {
-            var categoryvalues = categoryManager.GetAllBL();
-            return View(categoryvalues);
+           //var categoryvalues = categoryManager.GetAllBL();
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddCategory(Category category)
+        {
+            //categoryManager.CategoryAddBL(category);
+            return RedirectToAction("GetCategoryList");
+            //ekleme işlemini gerçekleştirdikten sonra beni 
+            // GetCategoryList methoduna yönlendir.
         }
 
     }
